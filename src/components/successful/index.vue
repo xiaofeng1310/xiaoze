@@ -15,7 +15,12 @@
             <i class="el-icon-tickets" @click="isCollapseTap"></i>
           </div>
           <div class="middle-area__msglist">
-            hh
+            <el-breadcrumb separator=">" class="eden-breadcrumb">
+              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+              <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
+              <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+              <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+            </el-breadcrumb>
           </div>
         </div>
         <div class="right-area">
@@ -125,6 +130,11 @@ export default {
     color: #606266;
     font-size: 14px;
     font-weight: 400;
+  }
+  .eden-breadcrumb {
+    display: inline-block;
+    line-height: 60px;
+    min-width: 50px;
   }
   .right-area {
     min-width: 250px;
