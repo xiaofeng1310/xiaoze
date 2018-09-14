@@ -15,7 +15,7 @@
             <i class="el-icon-tickets" @click="isCollapseTap"></i>
           </div>
           <div class="middle-area__msglist">
-            <el-breadcrumb separator=">" class="eden-breadcrumb">
+            <el-breadcrumb separator="/" class="eden-breadcrumb">
               <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
               <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
               <el-breadcrumb-item>活动列表</el-breadcrumb-item>
@@ -49,9 +49,6 @@ export default {
       asideWidth: 240
     }
   },
-  mounted () {
-    console.log(this.$router)
-  },
   methods: {
     isCollapseTap () {
       this.isCollapse = !this.isCollapse
@@ -64,6 +61,14 @@ export default {
   },
   components: {
     Ztree
+  },
+  route: {
+    beforeRouteUpdate (to, from, next) {
+      next((vm) => {
+        // vm.routeList = to.meta.routeList
+        console.log(to.meta.routeList)
+      })
+    }
   }
 }
 </script>
